@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM - 2nd</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+    <div class="parent">
+
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+    </div>
+
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+<script>
+    const parent = document.querySelector(".parent")
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[0])
+
+    // loop in children
+
+    for (let i = 0; i < parent.children.length; i++) {
+        //console.log(parent.children[i].innerHTML)
+        if (parent.children[i].innerText == "Monday"){
+
+            parent.children[i].style.color = "orange"
+        }
+    }
+
+        // accessing first or last element
+        parent.lastElementChild.style.color = "red" // for first type parent.firstElementChild
+        // accessing parent from child
+        const dayOne = document.querySelector(".day")
+        // console.log(dayOne.parentElement)
+        // accessing next sibling of a child
+        // console.log(dayOne.nextElementSibling);
+        //console.log("Nodes:",parent.childNodes)
+
+
+        //creating new element
+
+        // const div = document.createElement("div")
+        // div.className = "main"
+        // div.id = Math.floor((Math.random() * 10) + 1)
+        // div.innerText = "This is a div"
+        // div.style.color = "orange"
+
+        // document.body.appendChild(div)
+
+        
+
+    function addLang(lang){
+
+        const Li = document.createElement("li")
+        Li.innerHTML = lang     // it traverse the whole code and then add at the last which is not optimized for bigger projects
+        Li.style.color = "orange"
+        document.querySelector(".language").appendChild(Li)
+    }
+
+    function addLangOptimizedWay(lang){
+
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(lang))
+        //li.style.color = "orange"
+        document.querySelector(".language").appendChild(li)
+    }
+        
+    addLang("Python")
+    addLangOptimizedWay("TypeScript")
+    addLangOptimizedWay("Cpp")
+
+    // Editing an element by DOM
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo" Not Sutaible for Optimization
+
+    const newLi = document.createElement("li")
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi)
+
+    // second way of editing
+
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = "<li>Golang</li>"
+
+    // removing an element
+    
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+    
+</script>
+    
+</body>
+</html>
