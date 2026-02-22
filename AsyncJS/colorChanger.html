@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS 2</title>
+</head>
+<body>
+    
+    <h2>JS 1</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+    const body = document.querySelector("body")
+    document.querySelector("#start").addEventListener("click", ()=>{
+
+        const setName = setInterval(()=>{
+            
+            body.style.backgroundColor = "#" + String(Math.floor(Math.random() * 1000))
+        }, 500)
+
+        document.getElementById("stop").addEventListener("click", ()=>{
+
+            clearInterval(setName)
+    })
+    })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Value Displayer</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  padding: 0 20px;
+}
+
+#insert{
+
+    padding: 0 20px;
+}
+    </style>
+</head>
+<body>
+    
+    <h2>Keyboard Value Displayer</h2>
+    <h3>Press any Key!</h3>
+    <div id="insert">
+        
+    </div>
+    <script>
+    
+    const insert = document.getElementById("insert")
+    window.addEventListener("keydown", (e)=>{
+
+        insert.innerHTML = `
+        <div>
+            <table>
+  <tr>
+    <th>Key</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key}</td>
+    <td>${e.code}</td>
+  </tr>
+  </table>
+  </div>
+        `
+    })
+    </script>
+</body>
+</html>
