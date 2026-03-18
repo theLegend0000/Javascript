@@ -10,7 +10,7 @@ const mysym = Symbol("myidentifier")
 const jsUser = {
     name: "Muhammad",
     age: 20,
-    [mysym]: "mysym",   // to use symbol use []
+    [mysym]: "mysym",   // to use symbol use [] symbols are unique and immutable, they can be used as keys in objects, they are not enumerable, they are not included in for...in loop, they are not included in Object.keys() method
     isStudent: true,
     isLoggedIn: false,
 }       // keys are always strings behind the scenes
