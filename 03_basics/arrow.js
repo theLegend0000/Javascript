@@ -25,7 +25,9 @@ const arrowFunction = (num1, num2) => {
 
 // OR
 
-const arrowFunction2 = (num1, num2) => num1 + num2  // OR (num1, num2) implicit return
+const arrowFunction2 = (num1, num2) => num1 + num2 // implicit return, if there is only one expression, it will be returned automatically
+const arrowFunction3 = (num1, num2) => (num1 + num2)  // OR (num1, num2) implicit return 
 
 console.log(arrowFunction(3, 5))
 console.log(arrowFunction2(10, 20))
+console.log(arrowFunction3(100, 200))
